@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Play&family=Roboto&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+header{
+  display: flex;
+  justify-content:space-around;
+  padding: 2rem;
+  background-color: rgb(250, 250, 250);
+  width: 100%;
+  height: 18vh;
+}
+.burger-menu{
+  width: 2.5rem;
+  cursor: pointer;
+}
+.bar{
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.55);
+  height: 3px;
+  margin-top: 0.65rem;
+  transition: all ease-in-out 0.4s;
+}
+.navlinks{
+  display: flex;
+  width: 45%;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  transition: transform ease-in-out 0.2s;
+}
+.logo{
+  font-family: 'Play', sans-serif;
+  letter-spacing: 3px;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.55);
+  text-shadow: rgba(0, 0, 0, 0.2) 6px 0px 3px;
+}
+.navlinks a{
+  text-decoration: none;
+  position: relative;
+  font-family: 'Roboto';
+  text-transform: uppercase;
+  color: #333;
+}
+.navlinks a:link{
+  color: inherit;
+}
+.navlinks a::after{
+  content: '';
+  width: 100%;
+  height: 0.2rem;
+  position: absolute;
+  left: 0;
+  bottom: -0.18rem;
+  background-color: #40826d;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: all ease-in-out 0.4s;
+}
+.navlinks a:hover::after{
+  transform-origin: right;
+  transform: scaleX(1); 
+}
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width:1024px){
+  header{
+    justify-content: space-around;
+  }
+  header h1{
+    margin-top: 0.35rem;
+  }
+  .navlinks{
+    background-color: #40826d;
+    position: absolute;
+    justify-content: space-around;
+    top: 18vh;
+    width: 100%;
+    height: 3rem;
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  .navlinks-active{
+    opacity: 1 !important; 
+  }
+  .navlinks a{
+    color: rgb(250, 250, 250);
+    text-shadow: 0 0 2px #fff;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out  0.25s;
+  }
+  
+}
+.navlink-active{
+  transform: scaleY(1);
+}
+
+.bar1-active{
+  transform: rotate(45deg) translate(0.20rem,1rem);
+}
+.bar2-active{
+  opacity: 0;
+}
+.bar3-active{
+  transform: rotate(-45deg) translate(0.20rem,-1rem);
+}
