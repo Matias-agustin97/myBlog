@@ -31,15 +31,17 @@ app.get('/blog',(req,res)=>{
     })
 })
 
-app.post('/blog',(req,res)=>{
-    let newBlog= new Blog({
-        "title":"prueba",
-        "subtitle":" sub",
-        "body":"body"
+app.get('/blog/:id',(req,res)=>{
+    const id= req.params.id
+    Blog.findById(id)
+    .then(result =>{
+        res.render('details',{blog:result,title:req.params.title})
     })
-    newBlog.save()
-    res.send(newBlog)
+    .catch(error =>{
+        console.error(error);
+    })
 })
+
 
 app.get('/contact',(req,res)=>{
     res.render('contact')
@@ -52,3 +54,6 @@ app.post('/contact',(req,res)=>{
 
 
 
+app.use((req,res)=>{
+    res.status(404).res.render('404')
+})

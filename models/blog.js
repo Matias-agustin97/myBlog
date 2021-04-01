@@ -14,7 +14,12 @@ const blogSchema= new Schema({
     body:{
         type: String,
         required: true
-    }
+    },
+    date:{
+        type: String,
+        default: new Date().toLocaleDateString()
+    },
+
 },{timestamps:true}) //Este valor opcional nos deja un timestamp cada vez que creamos un documento
 
 const Blog= mongoose.model('Blog', blogSchema)
@@ -26,4 +31,18 @@ module.exports=Blog
 })
 
 x.save()
+
+app.post('/blog',(req,res)=>{
+    let newBlog= new Blog({
+        "title":"prueba",
+        "subtitle":" sub",
+        "body":"body"
+    })
+    newBlog.save()
+    res.send(newBlog)
+})
+
+
+
+
 */

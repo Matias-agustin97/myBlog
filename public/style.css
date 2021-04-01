@@ -15,6 +15,7 @@ header{
 .burger-menu{
   width: 2.5rem;
   cursor: pointer;
+  display: none;
 }
 .bar{
   width: 100%;
@@ -64,23 +65,118 @@ header{
   transform-origin: right;
   transform: scaleX(1); 
 }
+.contact-container{
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #40826d;
+  color: rgb(250, 250, 250);
+}
+.contact-container h2{
+  font-family: 'Play', sans-serif;
+  text-transform: uppercase;
+  line-height: 2rem;
+  padding: 1rem;
+}
+.contact-form{
+  align-self:center;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 50%;
+  line-height: 2rem;
+}
+.contact-form input{
+  outline: none;
+  color: #fff;
+  background-color: inherit;
+  width: 100%;
+  height: 1.4rem;
+  position: relative;
+  border: none;
+  border-bottom:2px solid black ;
+  
+}
+.contact-form textarea{
+  outline: none;
+  border: 2px solid black;
+  background-color: #fff;
+  width: 100%;
+  height: 3rem;
+  position: relative;
+}
+.contact-form button[type="submit"]{
+  align-self: center;
+  margin: 0.85rem;
+  padding: 0.4rem 1.8rem;
+  border: none;
+  cursor: pointer;
+  transition: all ease-in-out 0.4s;
+}
+.contact-form button[type="submit"]:hover{
+  background-color: rgba(250, 250, 250,0.5);
+}
+.contact-form input::placeholder{
+  color: rgb(250, 250, 250);
+}
+.contact-form textarea::placeholder{
+  color: #333;
+}
 
+.footer{
+  font-family: "Play", sans-serif;
+  height: 10vh;
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  bottom: 0;
+}
+.footer-social{
+  display: flex;
+  justify-content: space-between;
+  width: 5rem;
+  font-size: 1.4rem;
+  color: #fff;
+}
+.footer-social a:link{
+  color: inherit;
+}
 
-
-
-
-
-
-
-
-
-
+.blogs div{
+  background-color: rgb(250, 250, 250);
+  min-height: 20vh;
+  position: relative;
+  margin: 40px 0;
+  padding-left: 30px;
+  border-left: 6px solid #40826d;
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2);
+}
+.blogs div h3{
+  font-family: 'Play',sans-serif;
+}
+.blogs div:hover h3{
+  color: #40826d;
+}
+.blogs strong{
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
 @media(max-width:1024px){
   header{
     justify-content: space-around;
   }
   header h1{
     margin-top: 0.35rem;
+  }
+  .burger-menu{
+    display: block;
   }
   .navlinks{
     background-color: #40826d;
@@ -101,7 +197,9 @@ header{
     opacity: 0;
     transition: opacity 0.2s ease-in-out  0.25s;
   }
-  
+  .contact-form{
+    width: 70%;
+  }
 }
 .navlink-active{
   transform: scaleY(1);

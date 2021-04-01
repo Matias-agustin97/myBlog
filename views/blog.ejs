@@ -6,22 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
     <link rel="shortcut icon" href="#" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
     <title>Blog</title>
 </head>
 <body>
     <%-include('./partials/nav.ejs')%>
+    <div class="blogs content">
+        <h2>Conoceme mejor leyendo lo que pienso</h2>
+    
+        <% if (blogs.length > 0) { %>
+          <% blogs.forEach(blog => { %>
+            <div  href="/blogs/<%= blog._id %>">
+                <strong><%=blog.date%></strong>
+                <h3 ><%= blog.title %></h3>
+              <p ><%= blog.body %></p>
+            </div>
+          <% }) %>
+        <% } else { %>
+          <p>There are no blogs to display...</p>
+        <% } %>
+        
+      </div>
+</div>
 
-<% for(let item of blogs){%>
-    <h2><%=item.title%></h1>
-    <h3><%=item.subtitle%></h3>
-        <p><%=item.body%></p>
-        <%}%>
-
-<script>
-    console.log(blog);
-</script>
 
 
+
+<%-include('./partials/footer.ejs')%>
 <script src="/app.js"></script>
 </body>
 </html>
