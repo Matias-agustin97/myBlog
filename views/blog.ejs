@@ -12,15 +12,15 @@
 <body>
     <%-include('./partials/nav.ejs')%>
     <div class="blogs content">
-        <h2>Conoceme mejor leyendo lo que pienso</h2>
+        <h2>Espacio para compartir mis ideas</h2>
     
         <% if (blogs.length > 0) { %>
           <% blogs.forEach(blog => { %>
-            <div  href="/blogs/<%= blog._id %>">
-                <strong><%=blog.date%></strong>
-                <h3 ><%= blog.title %></h3>
-              <p ><%= blog.body %></p>
-            </div>
+            <a  href="/blogs/<%= blog._id %>">
+              <strong><%=blog.date%></strong>
+                <h3><%= blog.title %></h3>
+              <p><%= blog.body %></p>
+            </a>
           <% }) %>
         <% } else { %>
           <p>There are no blogs to display...</p>

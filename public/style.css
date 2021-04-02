@@ -30,7 +30,7 @@ header{
   justify-content: space-between;
   align-items: center;
   list-style: none;
-  transition: transform ease-in-out 0.2s;
+  transition: all ease-in-out 0.2s;
 }
 .logo{
   font-family: 'Play', sans-serif;
@@ -70,7 +70,7 @@ header{
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #40826d;
+  background-color: rgba(250, 250, 250,0.5);
   color: rgb(250, 250, 250);
 }
 .contact-container h2{
@@ -80,6 +80,7 @@ header{
   padding: 1rem;
 }
 .contact-form{
+  padding: 1rem;
   align-self:center;
   font-family: 'Roboto', sans-serif;
   display: flex;
@@ -87,21 +88,30 @@ header{
   align-items: flex-start;
   width: 50%;
   line-height: 2rem;
+  border: 1px solid #333;
+  border-left: 1.2rem solid #40826d;
+  border-radius: 1.2rem;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
 }
 .contact-form input{
   outline: none;
-  color: #fff;
+  color: #40826d;
   background-color: inherit;
-  width: 100%;
+  width: 80%;
   height: 1.4rem;
   position: relative;
   border: none;
   border-bottom:2px solid black ;
-  
+}
+.contact-form label{
+  color: #40826d;
+  font-weight: 600;
+  font-family: "Play", sans-serif;
 }
 .contact-form textarea{
   outline: none;
-  border: 2px solid black;
+  border: none;
+  border-bottom: 2px solid #333;
   background-color: #fff;
   width: 100%;
   height: 3rem;
@@ -113,10 +123,14 @@ header{
   padding: 0.4rem 1.8rem;
   border: none;
   cursor: pointer;
+  color: #fff;
   transition: all ease-in-out 0.4s;
+  background-color: #40826d;
+  font-weight: 600;
 }
 .contact-form button[type="submit"]:hover{
-  background-color: rgba(250, 250, 250,0.5);
+  background-color: hsl(161, 34%, 88%);
+  color: #40826d;
 }
 .contact-form input::placeholder{
   color: rgb(250, 250, 250);
@@ -134,7 +148,7 @@ header{
   display: flex;
   justify-content: space-around;
   align-items: center;
-  position: relative;
+  position:relative;
   bottom: 0;
 }
 .footer-social{
@@ -147,20 +161,29 @@ header{
 .footer-social a:link{
   color: inherit;
 }
-
-.blogs div{
+.content{
+  background-color: rgba(250, 250, 250,1);
+}
+.content h2{
+  text-align: center;
+  font-family: 'Roboto',sans-serif;
+  font-weight: 600;
+  color: #40826d;
+}
+.blogs a{
+  display: block;
   background-color: rgb(250, 250, 250);
   min-height: 20vh;
   position: relative;
-  margin: 40px 0;
+  margin: 40px 20px;
   padding-left: 30px;
   border-left: 6px solid #40826d;
   box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2);
 }
-.blogs div h3{
+.blogs a h3{
   font-family: 'Play',sans-serif;
 }
-.blogs div:hover h3{
+.blogs a:hover h3{
   color: #40826d;
 }
 .blogs strong{
@@ -203,6 +226,7 @@ header{
 }
 .navlink-active{
   transform: scaleY(1);
+  
 }
 
 .bar1-active{

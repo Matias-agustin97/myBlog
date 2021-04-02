@@ -14,7 +14,7 @@ const mobileMenu=(()=>{
       navLinks.classList.toggle('navlink-active')
       links.forEach(link=>{
         link.classList.toggle('navlinks-active')
-        console.log('done bud');
+        
       })
     })
   })()
