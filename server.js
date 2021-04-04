@@ -21,27 +21,33 @@ app.get('/',(req,res)=>{
     res.render('home')
 })
 
-app.get('/blog',(req,res)=>{
+app.get('/blogs',(req,res)=>{
     Blog.find().sort({createdAt:-1})// sort the array in descending order, thus the -1
     .then((result)=>{
-        res.render('blog',{blogs:result}) //Find nos Devuelve un array con todos los objetos,los pasamos al view como varible
+        res.render('blogs',{blogs:result}) //Find nos Devuelve un array con todos los objetos,los pasamos al view como varible
     })
     .catch((err)=>{
         console.error(err)
     })
 })
 
-app.get('/blog/:id',(req,res)=>{
+app.get('/blogs/:id',async(req,res)=>{
     const id= req.params.id
-    Blog.findById(id)
+   const blog= await Blog.findById(id)
+    try{
+        res.render('details',{blog})
+    }
+    catch(error){
+        console.error(error);
+    }
+})
+/* Blog.findById(id)
     .then(result =>{
         res.render('details',{blog:result,title:req.params.title})
     })
     .catch(error =>{
         console.error(error);
-    })
-})
-
+    }) */
 
 app.get('/contact',(req,res)=>{
     res.render('contact')
@@ -54,6 +60,6 @@ app.post('/contact',(req,res)=>{
 
 
 
-app.use((req,res)=>{
+/*app.use((req,res)=>{
     res.status(404).res.render('404')
-})
+})*/
