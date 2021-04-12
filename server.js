@@ -7,7 +7,7 @@ const mongoose= require('mongoose')
 const Blog= require('./models/blog.js')
 
 mongoose.connect(process.env.DATA_BASEURL,{useUnifiedTopology: true, useNewUrlParser: true })
-    .then((result)=>app.listen(PORT,()=> console.log(`Server listening on port ${PORT}`)))
+    .then((result)=>console.log('Connected to data base'))
     .catch((error)=>console.log(error))
 
 app.set('view engine','ejs')
@@ -60,6 +60,8 @@ app.post('/contact',(req,res)=>{
 
 
 
-/*app.use((req,res)=>{
+app.use((req,res)=>{
     res.status(404).res.render('404')
-})*/
+})
+
+app.listen(PORT,()=> console.log(`Server listening on port ${PORT}`))
